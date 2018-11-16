@@ -15,11 +15,10 @@ class NewInvoiceTable extends Migration
     {
         Schema::create('invoices', function (Blueprint $table) {
             $table->increments('id');
-            $table->decimal('price',6,2);
+            $table->integer('toto');
             $table->string('name');
             $table->date('date');
             $table->timestamps();
-            $table->softDeletes();
             $table->unsignedInteger('user_id');
             $table->foreign('user_id')->references('id')->on('users');
         });
